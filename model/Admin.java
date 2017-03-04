@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -16,17 +16,37 @@ public class Admin {
     private int id;
     private String user;
     private String password;
-    private Date created;
+    private Timestamp created;
     private int status;
 
-    public Admin(int id, String user, String password, Date created, int status) {
+    public Admin(int id, String user, Timestamp created, int status) {
         this.id = id;
+        this.user = user;
+        this.created = created;
+        this.status = status;
+    }
+
+    public Admin(String user, Timestamp created, int status) {
+        this.user = user;
+        this.created = created;
+        this.status = status;
+    }
+    
+    public Admin(String user, String password, Timestamp created, int status) {
         this.user = user;
         this.password = password;
         this.created = created;
         this.status = status;
     }
 
+    public Admin(int id, String user, String password, Timestamp created, int status) {
+        this.id = id;
+        this.user = user;
+        this.password = password;
+        this.created = created;
+        this.status = status;
+    }
+    
     public int getId() {
         return id;
     }
@@ -51,11 +71,11 @@ public class Admin {
         this.password = password;
     }
 
-    public Date getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
@@ -69,7 +89,7 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "Admin{" + "id=" + id + ", user=" + user + ", password=" + password + ", created=" + created + ", status=" + status + '}';
+        return "Admin{" + "id=" + id + ", user=" + user + ", created=" + created + ", status=" + status + '}';
     }
     
 }

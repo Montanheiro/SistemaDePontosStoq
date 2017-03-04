@@ -14,7 +14,7 @@ public class Parameters {
     public static final String IDBRACNH = "26a26e97-f79a-11e6-85ce-e0db55a5104f"; //configurações stoq
     
     // BANCO DE DADOS DO SISTEMA DE PONTOS
-    public static final String URL1 = "jdbc:mysql://localhost/pontos"; 
+    public static final String URL1 = "jdbc:mysql://localhost/points"; 
     public static final String USR1 = "root"; 
     public static final String PWD1 = "root"; 
     public static final String DRIVER1 = "com.mysql.jdbc.Driver";
