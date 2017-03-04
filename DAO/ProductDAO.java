@@ -53,8 +53,7 @@ public class ProductDAO {
                 + Parameters.IDBRACNH + "'";
         ResultSet rs3 = stm3.executeQuery(sql3);
         rs3.next();
-       
-        
+          
         return new Product(
                 idSellable,
                 rs1.getString("barcode"),
@@ -118,40 +117,8 @@ public class ProductDAO {
                 idStorable,
                 rs2.getDouble("minimum_quantity"),
                 rs3.getDouble("qtd")));
-            
         }
         rs1.next();  
         return p;
-    }
-    
-    
-    
-//    
-//    public static ArrayList<Cliente> retreaveAll() throws SQLException {
-//        Statement stm
-//                = BancoDados.createConnection().
-//                        createStatement();
-//        String sql = "SELECT * FROM cliente";
-//        ResultSet rs = stm.executeQuery(sql);
-//        ArrayList<Cliente> f = new ArrayList<>();
-//        while (rs.next()) {       
-//            f.add(new Cliente(
-//                    rs.getInt("id"),
-//                    rs.getString("DataNascimento"),
-//                    rs.getInt("RG"),
-//                    rs.getDouble("Limite")));
-//        }
-//        rs.next();
-//        return f;
-//    }
+    }   
 }
-
-
-//--busca produto por código de barras
-//SELECT sellable.id, sellable.barcode, sellable.base_price, sellable.description, sellable.on_sale_end_date, sellable.on_sale_price, sellable.on_sale_start_date FROM sellable WHERE sellable.status = 'available' AND LOWER(sellable.barcode) = '2368694135945'
-//--busca estoque minimo e maximo, com o id do produto
-//SELECT storable.id, storable.minimum_quantity FROM storable WHERE storable.id = '26ecd6fd-f79a-11e6-85ce-e0db55a5104f' LIMIT 1
-//--ver quantos tem em estoque na matriz, com o id do produto
-//SELECT SUM(product_stock_item.quantity) AS qtd FROM product_stock_item WHERE product_stock_item.storable_id = '26ecd6fd-f79a-11e6-85ce-e0db55a5104f' AND product_stock_item.branch_id = '26a26e97-f79a-11e6-85ce-e0db55a5104f'
-
-
