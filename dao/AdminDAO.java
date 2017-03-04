@@ -44,7 +44,6 @@ public class AdminDAO {
             String sql = "SELECT * FROM admin where id =" + id;
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
-            String test1 = rs.getString("created");
             return new Admin(
                     id, 
                     rs.getString("user"), 

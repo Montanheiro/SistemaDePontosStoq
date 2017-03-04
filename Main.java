@@ -1,5 +1,6 @@
 
 import dao.AdminDAO;
+import dao.ClientDAO;
 import dao.ProductDAO;
 import java.util.Date;
 import java.sql.SQLException;
@@ -7,6 +8,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import model.Admin;
+import model.Client;
 import model.Product;
 
 public class Main {
@@ -32,8 +34,7 @@ public class Main {
 //        ArrayList<Admin> adm = AdminDAO.retreaveAll();
 //        for (Admin a : adm) {
 //            System.out.println(a);
-//        }
-        
+//        }        
         
 //        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
 //        AdminDAO.update(a);
@@ -45,7 +46,28 @@ public class Main {
 //        Admin a = new Admin(1, "usuario", "senha1234", new Timestamp(System.currentTimeMillis()), 1);
 //        AdminDAO.updatePassword(a);
 
-        System.out.println(AdminDAO.retreave("user", "senha")); 
+//        System.out.println(AdminDAO.retreave("user", "senha")); 
+          
+            // TESTES CLIENTES
+    
+//        Client c = new Client("nome", "telefone", "celular", "email", "rg", "cpf",
+//                "cidade", "pais", "estado", "rua", "numero", "cidade", "id stoq",
+//                "senha", new Timestamp(System.currentTimeMillis()), 0);
+//        ClientDAO.create(c);
+
+//        System.out.println(ClientDAO.retreave(1));
+
+//        ArrayList<Client> cli = ClientDAO.retreaveAll();
+//        for (Client c1 : cli) {
+//            System.out.println(c1);
+//        }
+
+//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        ClientDAO.update(c);
+//        System.out.println(ClientDAO.retreave(1));
+
         
     }
     
