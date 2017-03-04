@@ -21,9 +21,9 @@ public class DatabaseStoq {
         Connection connection;          //atributo do tipo Connection
         try {
             // Carregando o JDBC Driver padrão                        
-            Class.forName(Parameters.DRIVER1);
+            Class.forName(Parameters.DRIVER2);
 
-            connection = DriverManager.getConnection(Parameters.URL1, Parameters.USR1, Parameters.PWD1);
+            connection = DriverManager.getConnection(Parameters.URL2, Parameters.USR2, Parameters.PWD2);
 
             //Testa sua conexão//  
             if (connection != null) {
