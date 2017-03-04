@@ -30,7 +30,11 @@ public class ProductDAO {
                 + "FROM sellable WHERE sellable.status = 'available' "
                 + "AND LOWER(sellable.barcode) = '" + barcode + "'";
         ResultSet rs1 = stm1.executeQuery(sql1);
-        rs1.next();   
+//        rs1.next();  
+//        
+        if(!rs1.next()){
+            System.out.println("não existe produto com esse código");
+        }
         
         //busca estoque minimo e maximo, com o id do produto
         Statement stm2
