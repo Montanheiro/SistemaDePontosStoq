@@ -1,6 +1,7 @@
 
 import DAO.ProductDAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.Product;
 
 /*
@@ -21,8 +22,10 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException {
         
-        Product p = ProductDAO.retreaveByBarcode("2368694135945");
+//        Product p = ProductDAO.retreaveByBarcode("2368694135945");
+//        System.out.println(p.toString());
         
+        ArrayList<Product> p = ProductDAO.retreaveByDescription("calça");
         System.out.println(p.toString());
         
     }
