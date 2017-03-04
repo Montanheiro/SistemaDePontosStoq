@@ -1,5 +1,5 @@
 
-import DAO.ProductDAO;
+import dao.ProductDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Product;

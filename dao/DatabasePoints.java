@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 //TUTORIAL: http://www.devmedia.com.br/criando-uma-conexao-java-mysql-server/16753
 
