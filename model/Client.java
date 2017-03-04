@@ -5,7 +5,9 @@
  */
 package model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+
+
 
 /**
  *
@@ -28,10 +30,10 @@ public class Client {
     private String district;
     private String idstoq;
     private String password;
-    private Date created;
+    private Timestamp created;
     private int on_stoq;
 
-    public Client(int id, String name, String phone, String mobile, String email, String rg, String cpf, String city, String country, String state, String street, String streetnumber, String district, String idstoq, String password, Date created, int on_stoq) {
+    public Client(int id, String name, String phone, String mobile, String email, String rg, String cpf, String city, String country, String state, String street, String streetnumber, String district, String idstoq, String password, Timestamp created, int on_stoq) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -171,11 +173,11 @@ public class Client {
         this.password = password;
     }
 
-    public Date getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 

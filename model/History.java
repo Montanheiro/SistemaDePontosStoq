@@ -5,7 +5,8 @@
  */
 package model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+
 
 /**
  *
@@ -16,9 +17,9 @@ public class History {
     private int id;
     private Client client;
     private String eancode;
-    private Date date;
+    private Timestamp date;
 
-    public History(int id, Client client, String eancode, Date date) {
+    public History(int id, Client client, String eancode, Timestamp date) {
         this.id = id;
         this.client = client;
         this.eancode = eancode;
@@ -49,11 +50,11 @@ public class History {
         this.eancode = eancode;
     }
 
-    public Date getDate() {
+    public Timestamp getTimestamp() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setTimestamp(Timestamp date) {
         this.date = date;
     }
 
