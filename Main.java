@@ -72,11 +72,13 @@ public class Main {
 //        ClientDAO.update(c);
 //        System.out.println(ClientDAO.retreave(1));
 
-        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
-        History h = new History(c, "eancode", new Timestamp(System.currentTimeMillis()));
-        System.out.println(HistoryDAO.create(h));
+//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        History h = new History(c, "eancode", new Timestamp(System.currentTimeMillis()));
+//        System.out.println(HistoryDAO.create(h));
+
+        System.out.println(HistoryDAO.retreave(1));
     }
     
 }
