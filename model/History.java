@@ -26,6 +26,12 @@ public class History {
         this.date = date;
     }
 
+    public History(Client client, String eancode, Timestamp date) {
+        this.client = client;
+        this.eancode = eancode;
+        this.date = date;
+    }
+
     public int getId() {
         return id;
     }
@@ -50,11 +56,11 @@ public class History {
         this.eancode = eancode;
     }
 
-    public Timestamp getTimestamp() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setTimestamp(Timestamp date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

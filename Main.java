@@ -1,6 +1,7 @@
 
 import dao.AdminDAO;
 import dao.ClientDAO;
+import dao.HistoryDAO;
 import dao.ProductDAO;
 import java.util.Date;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import model.Admin;
 import model.Client;
+import model.History;
 import model.Product;
 
 public class Main {
@@ -17,11 +19,13 @@ public class Main {
         
             // TESTES PRODUTO
         
-//        Product p = ProductDAO.retreaveByBarcode("236869413594");
+//        Product p = ProductDAO.retreaveByBarcode("2368694135945");
 //        System.out.println(p.toString());
         
-//        ArrayList<Product> p = ProductDAO.retreaveByDescription("ajfa");
-//        System.out.println(p.toString());
+//        ArrayList<Product> p2 = ProductDAO.retreaveByDescription("usa");       
+//        for (Product p : p2) {
+//            System.out.println(p);
+//        }
       
             // TESTES ADMIN
 
@@ -68,7 +72,11 @@ public class Main {
 //        ClientDAO.update(c);
 //        System.out.println(ClientDAO.retreave(1));
 
-        
+        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+        History h = new History(c, "eancode", new Timestamp(System.currentTimeMillis()));
+        System.out.println(HistoryDAO.create(h));
     }
     
 }
