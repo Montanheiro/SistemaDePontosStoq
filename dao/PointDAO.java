@@ -8,6 +8,7 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import model.Client;
 import model.Point;
 
@@ -50,5 +51,25 @@ public class PointDAO {
                     rs.getInt("value"), 
                     rs.getTimestamp("date"),
                     rs.getString("desc"));         
+    }
+    
+    public static ArrayList<Point> retreaveAll() throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM point";
+            ResultSet rs = stm.executeQuery(sql);
+            ArrayList<Point> p = new ArrayList<>();
+            while (rs.next()) {
+                Client c = ClientDAO.retreave(rs.getInt("client"));
+                p.add(new Point(
+                        rs.getInt("id"), 
+                        c, 
+                        rs.getInt("value"), 
+                        rs.getTimestamp("date"), 
+                        rs.getString("desc")));
+            }
+            rs.next();
+            return p;
     }
 }

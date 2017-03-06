@@ -97,8 +97,12 @@ public class Main {
 //        Point p = new Point(c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
 //        System.out.println(PointDAO.create(p));
         
-        System.out.println(PointDAO.retreave(1));
+//        System.out.println(PointDAO.retreave(1));
         
+        ArrayList<Point> point = PointDAO.retreaveAll();
+        for (Point p : point) {
+            System.out.println(p);
+        }
     }
     
 }
