@@ -18,10 +18,11 @@ import model.Exchange;
 import model.History;
 import model.Point;
 import model.Product;
+import model.Token;
 
 public class Main {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, Exception {
         
             // TESTES PRODUTO
         
@@ -122,9 +123,18 @@ public class Main {
 
         // TESTES ADD CREDIT
 
+//        Client c = ClientDAO.retreave(1);
+//        Credit cr = new Credit(c, 10.00, "credito pelo sistema de pontos");
+//        System.out.println(CreditDAO.create(cr));
+        
+        // TESTES TOKEN
+  
         Client c = ClientDAO.retreave(1);
-        Credit cr = new Credit(c, 10.00, "credito pelo sistema de pontos");
-        System.out.println(CreditDAO.create(cr));
+        String token = new Token().Gerate("client", String.valueOf(c.getId()), 2);
+        System.out.println(token);
+        System.out.println(new Token().Verify(token, "client"));
+        
+        
     }
     
 }

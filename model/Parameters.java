@@ -30,4 +30,7 @@ public class Parameters {
     public static final String USR3 = "postgres";
     public static final String PWD3 = "postgres";
     public static final String DRIVER3 = "org.postgresql.Driver";
+    
+    // CONFIGURAÇÕES DE CRIPITOGRAFIA DE SENHA E TOKEN
+    public static final String TOKENKEY = "mateusnoob";
 }
