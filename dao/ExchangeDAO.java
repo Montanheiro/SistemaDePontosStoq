@@ -8,6 +8,7 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import model.Admin;
 import model.Exchange;
 import model.Point;
@@ -52,6 +53,27 @@ public class ExchangeDAO {
                     rs.getDouble("discount"),
                     p,
                     a);                
+    }
+    
+    public static ArrayList<Exchange> retreaveAll() throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM exchange";
+            ResultSet rs = stm.executeQuery(sql);
+            ArrayList<Exchange> e = new ArrayList<>();
+            while (rs.next()) {
+                Point p = PointDAO.retreave(rs.getInt("point"));
+                Admin a = AdminDAO.retreave(rs.getInt("admin"));
+                e.add(new Exchange(
+                    rs.getInt("id"),
+                    rs.getDouble("total"),
+                    rs.getDouble("discount"),
+                    p,
+                    a));
+            }
+            rs.next();
+            return e;
     }
    
 }

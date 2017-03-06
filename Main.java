@@ -106,6 +106,7 @@ public class Main {
 //            System.out.println(p);
 //        }
 
+        // TESTES EXCHANGE
 
 //        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
 //            "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
@@ -115,7 +116,12 @@ public class Main {
 //        Exchange e = new Exchange(100.00, 299.00, p, a);
 //        System.out.println(ExchangeDAO.create(e));
         
-        System.out.println(ExchangeDAO.retreave(4));
+//        System.out.println(ExchangeDAO.retreave(4));
+
+        ArrayList<Exchange> exc = ExchangeDAO.retreaveAll();
+        for (Exchange e : exc) {
+            System.out.println(e);
+        }
     }
     
 }
