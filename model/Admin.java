@@ -38,14 +38,6 @@ public class Admin {
         this.created = created;
         this.status = status;
     }
-
-    public Admin(int id, String user, String password, Timestamp created, int status) {
-        this.id = id;
-        this.user = user;
-        this.password = password;
-        this.created = created;
-        this.status = status;
-    }
     
     public int getId() {
         return id;

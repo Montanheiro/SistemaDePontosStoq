@@ -33,8 +33,10 @@ public class Client {
     private Timestamp created;
     private int on_stoq;
 
-    public Client(int id, String name, String phone, String mobile, String email, String rg, String cpf, String city, String country, String state, String street, String streetnumber, String district, String idstoq, String password, Timestamp created, int on_stoq) {
-        this.id = id;
+    public Client(String name, String phone, String mobile, String email, 
+            String rg, String cpf, String city, String country, String state, 
+            String street, String streetnumber, String district, String idstoq, 
+            String password, Timestamp created, int on_stoq) {
         this.name = name;
         this.phone = phone;
         this.mobile = mobile;
@@ -53,26 +55,10 @@ public class Client {
         this.on_stoq = on_stoq;
     }
 
-    public Client(String name, String phone, String mobile, String email, String rg, String cpf, String city, String country, String state, String street, String streetnumber, String district, String idstoq, String password, Timestamp created, int on_stoq) {
-        this.name = name;
-        this.phone = phone;
-        this.mobile = mobile;
-        this.email = email;
-        this.rg = rg;
-        this.cpf = cpf;
-        this.city = city;
-        this.country = country;
-        this.state = state;
-        this.street = street;
-        this.streetnumber = streetnumber;
-        this.district = district;
-        this.idstoq = idstoq;
-        this.password = password;
-        this.created = created;
-        this.on_stoq = on_stoq;
-    }
-
-    public Client(int id, String name, String phone, String mobile, String email, String rg, String cpf, String city, String country, String state, String street, String streetnumber, String district, String idstoq, Timestamp created, int on_stoq) {
+    public Client(int id, String name, String phone, String mobile, String email, 
+            String rg, String cpf, String city, String country, String state, 
+            String street, String streetnumber, String district, String idstoq, 
+            Timestamp created, int on_stoq) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -229,7 +215,12 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + ", name=" + name + ", phone=" + phone + ", mobile=" + mobile + ", email=" + email + ", rg=" + rg + ", cpf=" + cpf + ", city=" + city + ", country=" + country + ", state=" + state + ", street=" + street + ", streetnumber=" + streetnumber + ", district=" + district + ", idstoq=" + idstoq + ", created=" + created + ", on_stoq=" + on_stoq + '}';
+        return "Client{" + "id=" + id + ", name=" + name + ", phone=" + phone 
+                + ", mobile=" + mobile + ", email=" + email + ", rg=" + rg 
+                + ", cpf=" + cpf + ", city=" + city + ", country=" + country 
+                + ", state=" + state + ", street=" + street + ", streetnumber=" 
+                + streetnumber + ", district=" + district + ", idstoq=" + idstoq 
+                + ", created=" + created + ", on_stoq=" + on_stoq + '}';
     }
     
 }
