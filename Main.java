@@ -91,11 +91,13 @@ public class Main {
         
         // TESTES POINT
 
-        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
-        Point p = new Point(c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
-        System.out.println(PointDAO.create(p));
+//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        Point p = new Point(c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
+//        System.out.println(PointDAO.create(p));
+        
+        System.out.println(PointDAO.retreave(1));
         
     }
     

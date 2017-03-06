@@ -8,6 +8,7 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.Client;
 import model.Point;
 
 /**
@@ -35,5 +36,19 @@ public class PointDAO {
             return p;
     }
     
-    
+    public static Point retreave(int id) throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM point where id =" + id;
+            ResultSet rs = stm.executeQuery(sql);
+            rs.next();
+            Client c = ClientDAO.retreave(rs.getInt("client"));
+            return new Point(
+                    id, 
+                    c, 
+                    rs.getInt("value"), 
+                    rs.getTimestamp("date"),
+                    rs.getString("desc"));         
+    }
 }
