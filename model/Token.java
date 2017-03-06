@@ -8,7 +8,10 @@ import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
+import java.io.UnsupportedEncodingException;
 import java.security.Key;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
@@ -67,5 +70,17 @@ public class Token {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+    
+    public String Password(String passOrigin) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        
+        MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
+        byte messageDigest[] = algorithm.digest(passOrigin.getBytes("UTF-8"));
+
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : messageDigest) {
+          hexString.append(String.format("%02X", 0xFF & b));
+        }
+        return hexString.toString();
     }
 }

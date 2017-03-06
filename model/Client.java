@@ -5,7 +5,11 @@
  */
 package model;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -49,8 +53,12 @@ public class Client {
         this.street = street;
         this.streetnumber = streetnumber;
         this.district = district;
-        this.idstoq = idstoq;
-        this.password = password;
+        this.idstoq = idstoq;  
+        try {
+            this.password = new Token().Password(password);
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.created = created;
         this.on_stoq = on_stoq;
     }

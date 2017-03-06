@@ -5,11 +5,14 @@
  */
 package dao;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import model.Client;
+import model.Token;
 
 /**
  *
@@ -77,12 +80,14 @@ public class ClientDAO {
                     rs.getInt("on_stoq"));            
     }
     
-    public static Client retreave(String emailOrCpf, String password) throws SQLException {
+    public static Client retreave(String emailOrCpf, String password) throws SQLException, 
+            NoSuchAlgorithmException, UnsupportedEncodingException {
         Statement stm
                 = DatabasePoints.createConnection().
                         createStatement();
         String sql = "SELECT * FROM client WHERE email = '" + emailOrCpf 
-                + "' || cpf = '" + emailOrCpf + "' AND password = '" + password + "' LIMIT 1";
+                + "' || cpf = '" + emailOrCpf + "' AND password = '" 
+                + new Token().Password(password) + "' LIMIT 1";
         ResultSet rs = stm.executeQuery(sql);
         rs.next();
         

@@ -6,6 +6,7 @@ import dao.ExchangeDAO;
 import dao.HistoryDAO;
 import dao.PointDAO;
 import dao.ProductDAO;
+import java.security.MessageDigest;
 import java.util.Date;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -80,6 +81,13 @@ public class Main {
 //        ClientDAO.update(c1);
 //        System.out.println(ClientDAO.retreave(1));
 
+//        Client c = new Client("Lucas Montanheiro", "3495-3516", "98442-9787", "email", "rg", "044.399.891-44",
+//                "cidade", "pais", "estado", "rua", "numero", "cidade", "",
+//                "senha", new Timestamp(System.currentTimeMillis()), 0);
+//        System.out.println(ClientDAO.create(c));
+        
+        System.out.println(ClientDAO.retreave("044.399.891-44", "senha"));
+
         // TESTES HISTORY
 
 //        Client c = ClientDAO.retreave(1);
@@ -129,10 +137,15 @@ public class Main {
         
         // TESTES TOKEN
   
-        Client c = ClientDAO.retreave(1);
-        String token = new Token().Gerate("client", String.valueOf(c.getId()), 2);
-        System.out.println(token);
-        System.out.println(new Token().Verify(token, "client"));
+//        Client c = ClientDAO.retreave(1);
+//        String token = new Token().Gerate("client", String.valueOf(c.getId()), 2);
+//        System.out.println(token);
+//        System.out.println(new Token().Verify(token, "client"));
+
+        // TESTES SENHAS CRIPTOGRAFADAS
+        
+       
+        
         
         
     }
