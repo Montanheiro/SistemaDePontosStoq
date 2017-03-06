@@ -8,6 +8,7 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import model.Client;
 import model.History;
 
@@ -50,5 +51,22 @@ public class HistoryDAO {
                     rs.getTimestamp("date"));                
     }
     
-    
+    public static ArrayList<History> retreaveAll() throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM history";
+            ResultSet rs = stm.executeQuery(sql);
+            ArrayList<History> h = new ArrayList<>();
+            while (rs.next()) {
+                Client c = ClientDAO.retreave(rs.getInt("client"));
+                h.add(new History(
+                    rs.getInt("id"),
+                    c,
+                    rs.getString("eancode"),
+                    rs.getTimestamp("date")));
+            }
+            rs.next();
+            return h;
+    }
 }

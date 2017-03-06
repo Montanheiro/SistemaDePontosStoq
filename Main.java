@@ -78,7 +78,13 @@ public class Main {
 //        History h = new History(c, "eancode", new Timestamp(System.currentTimeMillis()));
 //        System.out.println(HistoryDAO.create(h));
 
-        System.out.println(HistoryDAO.retreave(1));
+//        System.out.println(HistoryDAO.retreave(1));
+
+        ArrayList<History> hist = HistoryDAO.retreaveAll();
+        for (History h : hist) {
+            System.out.println(h);
+        }
+        
     }
     
 }
