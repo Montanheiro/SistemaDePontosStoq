@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package model;
-
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -16,11 +15,18 @@ public class Point {
     private int id;
     private Client client;
     private int value;
-    private Date date;
+    private Timestamp date;
     private String desc;
 
-    public Point(int id, Client client, int value, Date date, String desc) {
+    public Point(int id, Client client, int value, Timestamp date, String desc) {
         this.id = id;
+        this.client = client;
+        this.value = value;
+        this.date = date;
+        this.desc = desc;
+    }
+
+    public Point(Client client, int value, Timestamp date, String desc) {
         this.client = client;
         this.value = value;
         this.date = date;
@@ -51,11 +57,11 @@ public class Point {
         this.value = value;
     }
 
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

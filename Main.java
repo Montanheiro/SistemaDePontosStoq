@@ -2,6 +2,7 @@
 import dao.AdminDAO;
 import dao.ClientDAO;
 import dao.HistoryDAO;
+import dao.PointDAO;
 import dao.ProductDAO;
 import java.util.Date;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import model.Admin;
 import model.Client;
 import model.History;
+import model.Point;
 import model.Product;
 
 public class Main {
@@ -72,6 +74,8 @@ public class Main {
 //        ClientDAO.update(c);
 //        System.out.println(ClientDAO.retreave(1));
 
+        // TESTES HISTORY
+
 //        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
 //                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
 //                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
@@ -80,10 +84,18 @@ public class Main {
 
 //        System.out.println(HistoryDAO.retreave(1));
 
-        ArrayList<History> hist = HistoryDAO.retreaveAll();
-        for (History h : hist) {
-            System.out.println(h);
-        }
+//        ArrayList<History> hist = HistoryDAO.retreaveAll();
+//        for (History h : hist) {
+//            System.out.println(h);
+//        }
+        
+        // TESTES POINT
+
+        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+        Point p = new Point(c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
+        System.out.println(PointDAO.create(p));
         
     }
     
