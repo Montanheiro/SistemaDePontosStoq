@@ -37,7 +37,7 @@ public class Main {
       
             // TESTES ADMIN
 
-//        Admin a = new Admin("usuario","senha", new Timestamp(System.currentTimeMillis()), 1);
+//        Admin a = new Admin("lucas","lucas123", new Timestamp(System.currentTimeMillis()), 1);
 //        System.out.println(AdminDAO.create(a));
 
 //        Admin a2 = AdminDAO.retreave(1);
@@ -58,7 +58,7 @@ public class Main {
 //        Admin a = new Admin(1, "usuario", "senha1234", new Timestamp(System.currentTimeMillis()), 1);
 //        AdminDAO.updatePassword(a);
 
-//        System.out.println(AdminDAO.retreave("user", "senha")); 
+//        System.out.println(AdminDAO.retreave("lucas", "lucas123")); 
           
             // TESTES CLIENTES
     
@@ -85,8 +85,7 @@ public class Main {
 //                "cidade", "pais", "estado", "rua", "numero", "cidade", "",
 //                "senha", new Timestamp(System.currentTimeMillis()), 0);
 //        System.out.println(ClientDAO.create(c));
-        
-        System.out.println(ClientDAO.retreave("044.399.891-44", "senha"));
+//        System.out.println(ClientDAO.retreave("044.399.891-44", "senha"));
 
         // TESTES HISTORY
 

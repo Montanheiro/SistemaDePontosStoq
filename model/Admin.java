@@ -5,7 +5,11 @@
  */
 package model;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +38,11 @@ public class Admin {
     
     public Admin(String user, String password, Timestamp created, int status) {
         this.user = user;
-        this.password = password;
+        try {
+            this.password = new Token().Password(password);
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.created = created;
         this.status = status;
     }

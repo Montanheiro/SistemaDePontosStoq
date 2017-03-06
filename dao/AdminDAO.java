@@ -5,12 +5,14 @@
  */
 package dao;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import model.Admin;
+import model.Token;
 
 /**
  *
@@ -52,12 +54,13 @@ public class AdminDAO {
                     
     }
     
-    public static Admin retreave(String user, String password) throws SQLException {
+    public static Admin retreave(String user, String password) throws SQLException, 
+            NoSuchAlgorithmException, UnsupportedEncodingException {
         Statement stm
                 = DatabasePoints.createConnection().
                         createStatement();
         String sql = "SELECT * FROM admin WHERE user = '" + user 
-                + "' AND password = '" + password + "' AND status = 1";
+                + "' AND password = '" + new Token().Password(password) + "' AND status = 1";
         ResultSet rs = stm.executeQuery(sql);
         rs.next();
         
