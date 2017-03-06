@@ -1,6 +1,7 @@
 
 import dao.AdminDAO;
 import dao.ClientDAO;
+import dao.ExchangeDAO;
 import dao.HistoryDAO;
 import dao.PointDAO;
 import dao.ProductDAO;
@@ -11,6 +12,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import model.Admin;
 import model.Client;
+import model.Exchange;
 import model.History;
 import model.Point;
 import model.Product;
@@ -99,10 +101,19 @@ public class Main {
         
 //        System.out.println(PointDAO.retreave(1));
         
-        ArrayList<Point> point = PointDAO.retreaveAll();
-        for (Point p : point) {
-            System.out.println(p);
-        }
+//        ArrayList<Point> point = PointDAO.retreaveAll();
+//        for (Point p : point) {
+//            System.out.println(p);
+//        }
+
+
+        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+            "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+            "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+        Point p = new Point(1, c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
+        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
+        Exchange e = new Exchange(100.00, 299.00, p, a);
+        System.out.println(ExchangeDAO.create(e));
     }
     
 }

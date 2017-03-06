@@ -25,6 +25,13 @@ public class Exchange {
         this.admin = admin;
     }
 
+    public Exchange(double total, double discount, Point point, Admin admin) {
+        this.total = total;
+        this.discount = discount;
+        this.point = point;
+        this.admin = admin;
+    }
+
     public int getId() {
         return id;
     }
