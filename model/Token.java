@@ -59,6 +59,7 @@ public class Token {
                 .setSigningKey(DatatypeConverter.parseBase64Binary(Parameters.TOKENKEY))
                 .parseClaimsJws(jwt).getBody();
             
+            //verifica se o issuer é igual ao type
             return claims.getIssuer().equals(type);
             
         } catch (ExpiredJwtException | MalformedJwtException | SignatureException 
