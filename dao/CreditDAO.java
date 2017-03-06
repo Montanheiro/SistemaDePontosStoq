@@ -71,10 +71,10 @@ public class CreditDAO {
                     + "RETURNING account_transaction.id";
 
                
-            ResultSet rs3 = stm3.executeQuery(sql1);
+            ResultSet rs3 = stm3.executeQuery(sql3);
             rs3.next();
             String transactionid = rs3.getString("id");
-            System.out.println(transactionid);
+            System.out.println("transactionid = " + transactionid);
             
             return true;
     }
