@@ -1,6 +1,7 @@
 
 import dao.AdminDAO;
 import dao.ClientDAO;
+import dao.CreditDAO;
 import dao.ExchangeDAO;
 import dao.HistoryDAO;
 import dao.PointDAO;
@@ -12,6 +13,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import model.Admin;
 import model.Client;
+import model.Credit;
 import model.Exchange;
 import model.History;
 import model.Point;
@@ -70,17 +72,16 @@ public class Main {
 //            System.out.println(c1);
 //        }
 
-//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
-//        ClientDAO.update(c);
+//        Client c1 = new Client(1, "Lucas", "telefone", "celular", "email", "rg",
+//                "cpf", "cidade", "pais", "estado", "rua", "numero", "cidade", 
+//                "26d7e2e2-f79a-11e6-85ce-e0db55a5104f", "123", 
+//                new Timestamp(System.currentTimeMillis()), 1);
+//        ClientDAO.update(c1);
 //        System.out.println(ClientDAO.retreave(1));
 
         // TESTES HISTORY
 
-//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        Client c = ClientDAO.retreave(1);
 //        History h = new History(c, "eancode", new Timestamp(System.currentTimeMillis()));
 //        System.out.println(HistoryDAO.create(h));
 
@@ -93,9 +94,7 @@ public class Main {
         
         // TESTES POINT
 
-//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-//                "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-//                "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        Client c = ClientDAO.retreave(1);
 //        Point p = new Point(c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
 //        System.out.println(PointDAO.create(p));
         
@@ -108,9 +107,7 @@ public class Main {
 
         // TESTES EXCHANGE
 
-//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-//            "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-//            "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        Client c = ClientDAO.retreave(1);
 //        Point p = new Point(1, c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
 //        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
 //        Exchange e = new Exchange(100.00, 299.00, p, a);
@@ -118,10 +115,16 @@ public class Main {
         
 //        System.out.println(ExchangeDAO.retreave(4));
 
-        ArrayList<Exchange> exc = ExchangeDAO.retreaveAll();
-        for (Exchange e : exc) {
-            System.out.println(e);
-        }
+//        ArrayList<Exchange> exc = ExchangeDAO.retreaveAll();
+//        for (Exchange e : exc) {
+//            System.out.println(e);
+//        }
+
+        // TESTES ADD CREDIT
+
+        Client c = ClientDAO.retreave(1);
+        Credit cr = new Credit(c, 10.00, "credito pelo sistema de pontos");
+        System.out.println(CreditDAO.create(cr));
     }
     
 }
