@@ -9,8 +9,8 @@ public class Parameters {
     public static final int VALID = 13; //validade em meses
     
     // PARAMETROS DO STOQ
-    public static final String IDIMBALANCEACCOUNT = ""; //configurações stoq
-    public static final String IDPAYMENTCREDIT = ""; //configurações stoq
+    public static final String IDIMBALANCEACCOUNT = "264e7220-f79a-11e6-85ce-e0db55a5104f"; //configurações stoq
+    public static final String IDMETHODCREDIT = "264e722b-f79a-11e6-85ce-e0db55a5104f"; //configurações stoq
     public static final String IDBRACNH = "26a26e97-f79a-11e6-85ce-e0db55a5104f"; //configurações stoq
     
     // BANCO DE DADOS DO SISTEMA DE PONTOS
