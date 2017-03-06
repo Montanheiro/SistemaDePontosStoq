@@ -107,13 +107,15 @@ public class Main {
 //        }
 
 
-        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
-            "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
-            "kgjs", new Timestamp(System.currentTimeMillis()), 1);
-        Point p = new Point(1, c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
-        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
-        Exchange e = new Exchange(100.00, 299.00, p, a);
-        System.out.println(ExchangeDAO.create(e));
+//        Client c = new Client(1, "kgjs", "fssf", "kgjs", "kgjs", "kgjs", "kgjs",
+//            "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "kgjs", "id kgjs",
+//            "kgjs", new Timestamp(System.currentTimeMillis()), 1);
+//        Point p = new Point(1, c, -2, new Timestamp(System.currentTimeMillis()), "descrição");
+//        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
+//        Exchange e = new Exchange(100.00, 299.00, p, a);
+//        System.out.println(ExchangeDAO.create(e));
+        
+        System.out.println(ExchangeDAO.retreave(4));
     }
     
 }

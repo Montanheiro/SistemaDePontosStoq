@@ -8,7 +8,9 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.Admin;
 import model.Exchange;
+import model.Point;
 
 /**
  *
@@ -33,6 +35,23 @@ public class ExchangeDAO {
             int key = rs.getInt(1);
             e.setId(key);
             return e;
+    }
+    
+    public static Exchange retreave(int id) throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM exchange where id =" + id;
+            ResultSet rs = stm.executeQuery(sql);
+            rs.next();
+            Point p = PointDAO.retreave(rs.getInt("point"));
+            Admin a = AdminDAO.retreave(rs.getInt("admin"));
+            return new Exchange(
+                    id,
+                    rs.getDouble("total"),
+                    rs.getDouble("discount"),
+                    p,
+                    a);                
     }
    
 }
