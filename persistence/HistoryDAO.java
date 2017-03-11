@@ -23,9 +23,9 @@ public class HistoryDAO {
                     = DatabasePoints.createConnection().
                             createStatement();
             String sql
-                    = "INSERT INTO history (`client`, `eancode`, `date`) VALUES ('"
+                    = "INSERT INTO history (`client`, `search`, `date`) VALUES ('"
                     + h.getClient().getId() + "','"
-                    + h.getEancode() + "','" 
+                    + h.getSearch() + "','" 
                     + h.getDate() + "')";
 
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
@@ -47,7 +47,7 @@ public class HistoryDAO {
             return new History(
                     id, 
                     c,
-                    rs.getString("eancode"),
+                    rs.getString("search"),
                     rs.getTimestamp("date"));                
     }
     
@@ -63,7 +63,7 @@ public class HistoryDAO {
                 h.add(new History(
                     rs.getInt("id"),
                     c,
-                    rs.getString("eancode"),
+                    rs.getString("search"),
                     rs.getTimestamp("date")));
             }
             rs.next();

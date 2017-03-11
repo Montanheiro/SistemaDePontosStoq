@@ -16,19 +16,19 @@ public class History {
     
     private int id;
     private Client client;
-    private String eancode;
+    private String search;
     private Timestamp date;
 
-    public History(int id, Client client, String eancode, Timestamp date) {
+    public History(int id, Client client, String search, Timestamp date) {
         this.id = id;
         this.client = client;
-        this.eancode = eancode;
+        this.search = search;
         this.date = date;
     }
 
-    public History(Client client, String eancode, Timestamp date) {
+    public History(Client client, String search, Timestamp date) {
         this.client = client;
-        this.eancode = eancode;
+        this.search = search;
         this.date = date;
     }
 
@@ -48,12 +48,12 @@ public class History {
         this.client = client;
     }
 
-    public String getEancode() {
-        return eancode;
+    public String getSearch() {
+        return search;
     }
 
-    public void setEancode(String eancode) {
-        this.eancode = eancode;
+    public void setSearch(String search) {
+        this.search = search;
     }
 
     public Timestamp getDate() {
@@ -66,7 +66,7 @@ public class History {
 
     @Override
     public String toString() {
-        return "History{" + "id=" + id + ", client=" + client + ", eancode=" + eancode + ", date=" + date + '}';
+        return "History{" + "id=" + id + ", client=" + client + ", search=" + search + ", date=" + date + '}';
     }
        
 }
