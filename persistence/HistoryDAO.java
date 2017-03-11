@@ -23,10 +23,11 @@ public class HistoryDAO {
                     = DatabasePoints.createConnection().
                             createStatement();
             String sql
-                    = "INSERT INTO history (`client`, `search`, `date`) VALUES ('"
+                    = "INSERT INTO history (`client`, `search`, `date`, `type`) VALUES ('"
                     + h.getClient().getId() + "','"
                     + h.getSearch() + "','" 
-                    + h.getDate() + "')";
+                    + h.getDate() + "','" 
+                    + h.getType() + "')";
 
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
@@ -48,7 +49,8 @@ public class HistoryDAO {
                     id, 
                     c,
                     rs.getString("search"),
-                    rs.getTimestamp("date"));                
+                    rs.getTimestamp("date"),
+                    rs.getInt("type"));                
     }
     
     public static ArrayList<History> retreaveAll() throws SQLException {
@@ -64,7 +66,8 @@ public class HistoryDAO {
                     rs.getInt("id"),
                     c,
                     rs.getString("search"),
-                    rs.getTimestamp("date")));
+                    rs.getTimestamp("date"),
+                    rs.getInt("type")));
             }
             rs.next();
             return h;

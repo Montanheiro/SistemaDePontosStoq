@@ -18,15 +18,16 @@ public class History {
     private Client client;
     private String search;
     private Timestamp date;
+    private int type;
 
-    public History(int id, Client client, String search, Timestamp date) {
+    public History(int id, Client client, String search, Timestamp date, int type) {
         this.id = id;
         this.client = client;
         this.search = search;
         this.date = date;
     }
 
-    public History(Client client, String search, Timestamp date) {
+    public History(Client client, String search, Timestamp date, int type) {
         this.client = client;
         this.search = search;
         this.date = date;
@@ -64,9 +65,17 @@ public class History {
         this.date = date;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
-        return "History{" + "id=" + id + ", client=" + client + ", search=" + search + ", date=" + date + '}';
+        return "History{" + "id=" + id + ", client=" + client + ", search=" + search + ", date=" + date + ", type=" + type + '}';
     }
        
 }
