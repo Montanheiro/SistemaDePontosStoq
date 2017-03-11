@@ -67,7 +67,7 @@ public class Main {
 //                "senha", new Timestamp(System.currentTimeMillis()), 0);
 //        ClientDAO.create(c);
 
-//        System.out.println(ClientDAO.retreave(1));
+        System.out.println(ClientDAO.retreave(1));
 
 //        ArrayList<Client> cli = ClientDAO.retreaveAll();
 //        for (Client c1 : cli) {

@@ -21,20 +21,12 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
 import persistence.ClientDAO;
 
-/**
- * REST Web Service
- *
- * @author lucas
- */
-@Path("Client")
+@Path("client")
 public class ClientResource {
 
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of ClientLoginResource
-     */
     public ClientResource() {
     }
 
@@ -46,7 +38,7 @@ public class ClientResource {
         Gson gson = new Gson();
         
         Client c = gson.fromJson(dados, Client.class);
-        System.out.println("Cliente >>>>>" + c);
+        System.out.println("Cliente >>>>> " + c);
         
         if(c.getCpf() != null){
             c = ClientDAO.retreave(c.getCpf(), c.getPassword());
