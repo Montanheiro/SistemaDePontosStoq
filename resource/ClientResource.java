@@ -26,8 +26,8 @@ import persistence.ClientDAO;
  *
  * @author lucas
  */
-@Path("ClientLogin")
-public class ClientLoginResource {
+@Path("Client")
+public class ClientResource {
 
     @Context
     private UriInfo context;
@@ -35,12 +35,12 @@ public class ClientLoginResource {
     /**
      * Creates a new instance of ClientLoginResource
      */
-    public ClientLoginResource() {
+    public ClientResource() {
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/logar")
+    @Path("/login")
     public String postJson(String dados) throws SQLException, Exception {
         
         Gson gson = new Gson();
@@ -62,7 +62,7 @@ public class ClientLoginResource {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/verificar")
+    @Path("/verify")
     public String getJson(@HeaderParam("token") String token) throws Exception {
         
         System.out.println("Verificando >>>> " + token);
