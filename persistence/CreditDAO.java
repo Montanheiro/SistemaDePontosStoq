@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import model.Credit;
-import model.Parameters;
+import constructor.Credit;
+import business.Parameters;
 
 /**
  *

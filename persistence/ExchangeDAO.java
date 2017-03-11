@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Admin;
-import model.Exchange;
-import model.Point;
+import constructor.Admin;
+import constructor.Exchange;
+import constructor.Point;
 
 /**
  *

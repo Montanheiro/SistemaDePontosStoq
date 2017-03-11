@@ -1,4 +1,4 @@
-package model;
+package business;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

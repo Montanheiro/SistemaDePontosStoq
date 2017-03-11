@@ -1,19 +1,19 @@
-package dao;
+package persistence;
 
 //TUTORIAL: http://www.devmedia.com.br/criando-uma-conexao-java-mysql-server/16753
 
 import java.sql.Connection; 
 import java.sql.DriverManager; 
 import java.sql.SQLException;
-import model.Parameters;
+import business.Parameters;
  
 //Início da classe de conexão//
-public class DatabaseStoqLocal { 
+public class DatabaseStoq { 
     
     public static String status = "Não conectou...";
  
     //Método Construtor da Classe//
-        public DatabaseStoqLocal() {
+        public DatabaseStoq() {
     }
  
     //Método de Conexão//
@@ -21,9 +21,9 @@ public class DatabaseStoqLocal {
         Connection connection;          //atributo do tipo Connection
         try {
             // Carregando o JDBC Driver padrão                        
-            Class.forName(Parameters.DRIVER3);
+            Class.forName(Parameters.DRIVER2);
 
-            connection = DriverManager.getConnection(Parameters.URL3, Parameters.USR3, Parameters.PWD3);
+            connection = DriverManager.getConnection(Parameters.URL2, Parameters.USR2, Parameters.PWD2);
 
             //Testa sua conexão//  
             if (connection != null) {
@@ -52,7 +52,7 @@ public class DatabaseStoqLocal {
     public static boolean FecharConexao() {
  
         try {
-            DatabaseStoqLocal.createConnection().close(); 
+            DatabaseStoq.createConnection().close(); 
             return true;
  
         } catch (SQLException e) {
@@ -63,6 +63,6 @@ public class DatabaseStoqLocal {
     //Método que reinicia sua conexão//
     public static java.sql.Connection ReiniciarConexao() {
         FecharConexao();
-        return DatabaseStoqLocal.createConnection();
+        return DatabaseStoq.createConnection();
     }
 }

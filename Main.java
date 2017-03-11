@@ -1,25 +1,25 @@
 
-import dao.AdminDAO;
-import dao.ClientDAO;
-import dao.CreditDAO;
-import dao.ExchangeDAO;
-import dao.HistoryDAO;
-import dao.PointDAO;
-import dao.ProductDAO;
+import persistence.AdminDAO;
+import persistence.ClientDAO;
+import persistence.CreditDAO;
+import persistence.ExchangeDAO;
+import persistence.HistoryDAO;
+import persistence.PointDAO;
+import persistence.ProductDAO;
 import java.security.MessageDigest;
 import java.util.Date;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import model.Admin;
-import model.Client;
-import model.Credit;
-import model.Exchange;
-import model.History;
-import model.Point;
-import model.Product;
-import model.Token;
+import constructor.Admin;
+import constructor.Client;
+import constructor.Credit;
+import constructor.Exchange;
+import constructor.History;
+import constructor.Point;
+import constructor.Product;
+import business.Token;
 
 public class Main {
 

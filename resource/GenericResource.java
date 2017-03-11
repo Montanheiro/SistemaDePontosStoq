@@ -1,7 +1,7 @@
 package resource;
 
 import com.google.gson.Gson;
-import dao.AdminDAO;
+import persistence.AdminDAO;
 import java.sql.SQLException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -10,7 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import model.Admin;
+import constructor.Admin;
 
 @Path("generic")
 public class GenericResource {
