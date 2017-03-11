@@ -19,12 +19,12 @@ import persistence.ClientDAO;
  */
 public class Login {
     
-    public Admin admin(String user, String pass) throws SQLException, 
+    public static Admin admin(String user, String pass) throws SQLException, 
             NoSuchAlgorithmException, UnsupportedEncodingException{
         return AdminDAO.retreave(user, pass);
     }
     
-    public Client client(String emailOrCpf, String pass) throws SQLException, 
+    public static Client client(String emailOrCpf, String pass) throws SQLException, 
             NoSuchAlgorithmException, UnsupportedEncodingException{
         return ClientDAO.retreave(emailOrCpf, pass);
     }
