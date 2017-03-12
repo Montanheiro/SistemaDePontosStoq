@@ -18,7 +18,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import persistence.ClientDAO;
@@ -89,6 +88,8 @@ public class ClientResource {
         
         Client c = gson.fromJson(body, Client.class);
         c = ClientDAO.create(c);
+        
+        // VERIFICAR AQUI SE JÁ EXISTE NO STOQ
         
         String token = new Token().Gerate("client", c.getId(), 30);
         return token;
