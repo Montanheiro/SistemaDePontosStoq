@@ -100,7 +100,8 @@ public class ClientResource {
     public String  getId(@HeaderParam("token") String token, 
             @QueryParam("id") int id) throws SQLException, Exception {
         
-        if(!new Token().Verify(token, "admin")) throw new Exception("Token invalido.");
+        if(!new Token().Verify(token, "admin") || !new Token().Verify(token, "superadmin")) 
+            throw new Exception("Token invalido.");
         
         Gson gson = new Gson();
         Client c = ClientDAO.retreave(id);
@@ -114,10 +115,11 @@ public class ClientResource {
     public String getAll(@HeaderParam("token") String token) 
             throws SQLException, Exception{
         
-        if(!new Token().Verify(token, "admin")) throw new Exception("Token invalido.");
+        if(!new Token().Verify(token, "admin") || !new Token().Verify(token, "superadmin")) 
+            throw new Exception("Token invalido.");
         
         Gson gson = new Gson();
         ArrayList<Client> client = ClientDAO.retreaveAll();
-        return gson.toJson(client);       
+        return gson.toJson(client);  
     }
 }
