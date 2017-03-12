@@ -83,7 +83,6 @@ public class PointDAO {
             while (rs.next()) {
                 p.add(new Point(
                         rs.getInt("id"), 
-                        c, 
                         rs.getInt("value"), 
                         rs.getTimestamp("date"), 
                         rs.getString("desc")));

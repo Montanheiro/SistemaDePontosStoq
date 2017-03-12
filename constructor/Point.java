@@ -33,6 +33,13 @@ public class Point {
         this.desc = desc;
     }
 
+    public Point(int id, int value, Timestamp date, String desc) {
+        this.id = id;
+        this.value = value;
+        this.date = date;
+        this.desc = desc;
+    }   
+
     public int getId() {
         return id;
     }
