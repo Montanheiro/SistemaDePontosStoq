@@ -33,8 +33,11 @@ public class AdminResource {
         
         Admin a = gson.fromJson(body, Admin.class);
         a = AdminDAO.retreave(a.getUser(), a.getPassword());
+
+        String token;
+        if(a.getType() == 1) token = new Token().Gerate("superadmin", a.getId(), 30);
+        else token = new Token().Gerate("admin", a.getId(), 30);
         
-        String token = new Token().Gerate("admin", a.getId(), 30);
         return token;
     }
 }
