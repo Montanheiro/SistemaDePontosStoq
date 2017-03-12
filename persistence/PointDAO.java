@@ -72,4 +72,23 @@ public class PointDAO {
             rs.next();
             return p;
     }
+    
+    public static ArrayList<Point> retreaveByClient(Client c) throws SQLException {
+            Statement stm
+                    = DatabasePoints.createConnection().
+                            createStatement();
+            String sql = "SELECT * FROM point where client = " + c.getId();
+            ResultSet rs = stm.executeQuery(sql);
+            ArrayList<Point> p = new ArrayList<>();
+            while (rs.next()) {
+                p.add(new Point(
+                        rs.getInt("id"), 
+                        c, 
+                        rs.getInt("value"), 
+                        rs.getTimestamp("date"), 
+                        rs.getString("desc")));
+            }
+            rs.next();
+            return p;
+    }
 }
