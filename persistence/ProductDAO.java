@@ -19,7 +19,7 @@ import constructor.Product;
 public class ProductDAO {
     
     
-    public static Product retreaveByBarcode(String barcode) throws SQLException {
+    public static Product retreaveByBarcode(String barcode) throws SQLException, Exception {
         Statement stm1
                 = DatabaseStoq.createConnection().
                         createStatement();
@@ -34,6 +34,7 @@ public class ProductDAO {
 //        
         if(!rs1.next()){
             System.out.println("não existe produto com esse código");
+            throw new Exception("não existe produto com esse código.");
         }
         
         //busca estoque minimo e maximo, com o id do produto
