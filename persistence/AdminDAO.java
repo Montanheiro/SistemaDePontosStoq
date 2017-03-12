@@ -106,12 +106,13 @@ public class AdminDAO {
             stm.execute(sql);
     }
     
-    public static void updatePassword(Admin a) throws SQLException {
+    public static void updatePassword(Admin a) throws SQLException, 
+            NoSuchAlgorithmException, UnsupportedEncodingException {
             Statement stm
                     = DatabasePoints.createConnection().
                             createStatement();
             String sql = "UPDATE admin SET "
-                    + "`password`='" + a.getPassword()+ "'"
+                    + "`password`='" + new Token().Password(a.getPassword()) + "'"
                     + " WHERE `id`= " + a.getId();
             stm.execute(sql);
     }

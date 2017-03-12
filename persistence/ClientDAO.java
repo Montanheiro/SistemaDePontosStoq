@@ -164,12 +164,13 @@ public class ClientDAO {
             stm.execute(sql);
     }
     
-    public static void updatePassword(Client c) throws SQLException {
+    public static void updatePassword(Client c) throws SQLException, 
+            NoSuchAlgorithmException, UnsupportedEncodingException {
             Statement stm
                     = DatabasePoints.createConnection().
                             createStatement();
             String sql = "UPDATE client SET "
-                    + "`password`='" + c.getPassword()+ "'"
+                    + "`password`='" + new Token().Password(c.getPassword()) + "'"
                     + " WHERE `id`= " + c.getId();
             stm.execute(sql);
     }
