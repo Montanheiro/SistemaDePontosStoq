@@ -9,6 +9,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
@@ -35,9 +36,20 @@ public class AdminResource {
         a = AdminDAO.retreave(a.getUser(), a.getPassword());
 
         String token;
-        if(a.getType() == 1) token = new Token().Gerate("superadmin", a.getId(), 30);
-        else token = new Token().Gerate("admin", a.getId(), 30);
+        if(a.getType() == 1) token = new Token().Gerate("superadmin", a.getId(), 8);
+        else token = new Token().Gerate("admin", a.getId(), 8);
         
         return token;
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/verify")
+    public String verify(@HeaderParam("token") String token) throws Exception {
+        
+        if(!new Token().Verify(token, "admin") && !new Token().Verify(token, "superadmin")) 
+            throw new Exception("Token invalido.");
+        
+        return "200";
     }
 }
