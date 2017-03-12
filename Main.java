@@ -37,7 +37,7 @@ public class Main {
       
             // TESTES ADMIN
 
-//        Admin a = new Admin("lucas","lucas123", new Timestamp(System.currentTimeMillis()), 1);
+//        Admin a = new Admin("lucas","lucas123", new Timestamp(System.currentTimeMillis()), 1, 1);
 //        System.out.println(AdminDAO.create(a));
           
 //        Admin a2 = AdminDAO.retreave(1);
@@ -48,7 +48,7 @@ public class Main {
 //            System.out.println(a);
 //        }        
         
-//        Admin a = new Admin(1, "usuario", new Timestamp(System.currentTimeMillis()), 1);
+//        Admin a = new Admin(2, "usuario", new Timestamp(System.currentTimeMillis()), 1, 1);
 //        AdminDAO.update(a);
 //        Admin a2 = AdminDAO.retreave(1);
 //        System.out.println(a2);
@@ -67,7 +67,7 @@ public class Main {
 //                "senha", new Timestamp(System.currentTimeMillis()), 0);
 //        ClientDAO.create(c);
 
-        System.out.println(ClientDAO.retreave(1));
+//        System.out.println(ClientDAO.retreave(1));
 
 //        ArrayList<Client> cli = ClientDAO.retreaveAll();
 //        for (Client c1 : cli) {
@@ -130,9 +130,9 @@ public class Main {
 
         // TESTES ADD CREDIT
 
-        Client c = ClientDAO.retreave(1);
-        Credit cr = new Credit(c, 10.00, "credito pelo sistema de pontos");
-        System.out.println(CreditDAO.create(cr));
+//        Client c = ClientDAO.retreave(1);
+//        Credit cr = new Credit(c, 10.00, "credito pelo sistema de pontos");
+//        System.out.println(CreditDAO.create(cr));
         
         // TESTES TOKEN
   

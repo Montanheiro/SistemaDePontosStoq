@@ -25,11 +25,12 @@ public class AdminDAO {
                     = DatabasePoints.createConnection().
                             createStatement();
             String sql
-                    = "INSERT INTO admin (`user`, `password`, `created`, `status`) VALUES ('"
+                    = "INSERT INTO admin (`user`, `password`, `created`, `status` , `type`) VALUES ('"
                     + a.getUser() + "','"
                     + a.getPassword() + "','"
                     + a.getCreated() + "','" 
-                    + a.getStatus() + "')";
+                    + a.getStatus() + "','"
+                    + a.getType() + "')";
 
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
@@ -50,7 +51,8 @@ public class AdminDAO {
                     id, 
                     rs.getString("user"), 
                     rs.getTimestamp("created"), 
-                    rs.getInt("status"));
+                    rs.getInt("status"),
+                    rs.getInt("type"));
                     
     }
     
@@ -68,7 +70,8 @@ public class AdminDAO {
                 rs.getInt("id"),
                 rs.getString("user"), 
                 rs.getTimestamp("created"), 
-                rs.getInt("status"));
+                rs.getInt("status"),
+                rs.getInt("type"));
     }
 
     public static ArrayList<Admin> retreaveAll() throws SQLException {
@@ -83,7 +86,8 @@ public class AdminDAO {
                     rs.getInt("id"),
                     rs.getString("user"), 
                     rs.getTimestamp("created"), 
-                    rs.getInt("status")));
+                    rs.getInt("status"),
+                    rs.getInt("type")));
             }
             rs.next();
             return a;
@@ -96,7 +100,8 @@ public class AdminDAO {
             String sql = "UPDATE admin SET "
                     + "`user`='" + a.getUser() + "',"
                     + "`created`='" + a.getCreated() + "',"
-                    + "`status`=" + a.getStatus()
+                    + "`status`=" + a.getStatus() + " , "
+                    + "`type`=" + a.getType()
                     + " WHERE `id`= " + a.getId();
             stm.execute(sql);
     }

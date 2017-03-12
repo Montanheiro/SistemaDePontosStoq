@@ -23,21 +23,24 @@ public class Admin {
     private String password;
     private Timestamp created;
     private int status;
+    private int type;
 
-    public Admin(int id, String user, Timestamp created, int status) {
+    public Admin(int id, String user, Timestamp created, int status, int type) {
         this.id = id;
         this.user = user;
         this.created = created;
         this.status = status;
+        this.type = type;
     }
 
-    public Admin(String user, Timestamp created, int status) {
+    public Admin(String user, Timestamp created, int status, int type) {
         this.user = user;
         this.created = created;
         this.status = status;
+        this.type = type;
     }
     
-    public Admin(String user, String password, Timestamp created, int status) {
+    public Admin(String user, String password, Timestamp created, int status, int type) {
         this.user = user;
         try {
             this.password = new Token().Password(password);
@@ -46,6 +49,7 @@ public class Admin {
         }
         this.created = created;
         this.status = status;
+        this.type = type;
     }
     
     public int getId() {
@@ -88,9 +92,17 @@ public class Admin {
         this.status = status;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
-        return "Admin{" + "id=" + id + ", user=" + user + ", created=" + created + ", status=" + status + '}';
+        return "Admin{" + "id=" + id + ", user=" + user + ", password=" + password + ", created=" + created + ", status=" + status + ", type=" + type + '}';
     }
-    
+
 }
