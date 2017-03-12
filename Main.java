@@ -20,6 +20,8 @@ import constructor.History;
 import constructor.Point;
 import constructor.Product;
 import business.Token;
+import constructor.Sale;
+import persistence.SaleDAO;
 
 public class Main {
 
@@ -141,6 +143,13 @@ public class Main {
 //        System.out.println(token);
 //        System.out.println(new Token().Verify(token, "client"));        
         
+
+        // TESTES SALE
+        
+//        ArrayList<Sale> sal = SaleDAO.retreaveAll();
+//        for (Sale s : sal) {
+//            System.out.println(s);
+//        } 
         
     }
     
