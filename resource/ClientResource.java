@@ -128,14 +128,16 @@ public class ClientResource {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/updatepassword")
-    public Boolean updatePassword(@HeaderParam("token") String token) 
+    public Boolean updatePassword(@HeaderParam("token") String token, String body) 
             throws SQLException, Exception{
         
-        int id = new Token().getSubject(token, "client");
+        Gson gson = new Gson();
+        Client c = gson.fromJson(body, Client.class); 
         
+        int id = new Token().getSubject(token, "client");
         if(id == 0) throw new Exception("Token invalido.");
         
-        Client c = ClientDAO.retreave(id);
+        c.setId(id);
         ClientDAO.updatePassword(c);
 
         return true;  
