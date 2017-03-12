@@ -123,4 +123,19 @@ public class ClientResource {
         ArrayList<Client> client = ClientDAO.retreaveAll();
         return gson.toJson(client);  
     }
+    
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/updatepassword")
+    public Boolean updatePassword(@HeaderParam("token") String token) 
+            throws SQLException, Exception{
+        
+        int id = new Token().getSubject(token, "client");
+        
+        if(id == 0) throw new Exception("Token invalido.");
+        
+        Client c = ClientDAO.retreave(id);
+        ClientDAO.updatePassword(c);
+
+        return true;  
+    }
 }
