@@ -86,6 +86,10 @@ public class Client {
         this.on_stoq = on_stoq;
     }
 
+    public Client(int id) {
+        this.id = id;
+    }
+    
     public int getId() {
         return id;
     }

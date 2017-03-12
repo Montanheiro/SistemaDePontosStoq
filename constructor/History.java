@@ -25,12 +25,14 @@ public class History {
         this.client = client;
         this.search = search;
         this.date = date;
+        this.type = type;
     }
 
     public History(Client client, String search, Timestamp date, int type) {
         this.client = client;
         this.search = search;
         this.date = date;
+        this.type = type;
     }
 
     public int getId() {

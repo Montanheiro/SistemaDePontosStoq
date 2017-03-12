@@ -26,8 +26,8 @@ public class HistoryDAO {
                     = "INSERT INTO history (`client`, `search`, `date`, `type`) VALUES ('"
                     + h.getClient().getId() + "','"
                     + h.getSearch() + "','" 
-                    + h.getDate() + "','" 
-                    + h.getType() + "')";
+                    + h.getDate() + "', " 
+                    + h.getType() + ")";
 
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();

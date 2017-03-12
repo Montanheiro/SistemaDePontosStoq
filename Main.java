@@ -62,9 +62,9 @@ public class Main {
           
             // TESTES CLIENTES
     
-//        Client c = new Client("nome", "telefone", "celular", "email", "rg", "cpf",
-//                "cidade", "pais", "estado", "rua", "numero", "cidade", "id stoq",
-//                "senha", new Timestamp(System.currentTimeMillis()), 0);
+//        Client c = new Client("Usuário Anonimo", "", "", "", "", "ANON",
+//                "", "", "", "", "", "", "","ANONPASS",
+//                new Timestamp(System.currentTimeMillis()), 1);
 //        ClientDAO.create(c);
 
 //        System.out.println(ClientDAO.retreave(1));
