@@ -22,13 +22,14 @@ import javax.xml.bind.DatatypeConverter;
  */
 public class Token {
     
-    public String Gerate(String issuer, String subject, int hours) {
+    public String Gerate(String issuer, int idSubject, int hours) {
 
         //The JWT signature algorithm we will be using to sign the token
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
         
         //Hours to milliseconds
         long ttlMillis = hours * 3600000;
+        String subject = String.valueOf(idSubject);
         
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
@@ -82,5 +83,25 @@ public class Token {
           hexString.append(String.format("%02X", 0xFF & b));
         }
         return hexString.toString();
+    }
+    
+    public int getSubject(String jwt, String type) throws Exception{
+        
+        try{
+            Claims claims = Jwts.parser()
+                .setSigningKey(DatatypeConverter.parseBase64Binary(Parameters.TOKENKEY))
+                .parseClaimsJws(jwt).getBody();
+            
+            //se o suject nao for do tipo esperado lança erro
+            if(!claims.getIssuer().equals(type)) throw new Exception("Token invalido.");
+            
+            //retorna o sujeito do token
+            return Integer.parseInt(claims.getSubject());
+            
+        } catch (ExpiredJwtException | MalformedJwtException | SignatureException 
+                | UnsupportedJwtException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
     }
 }
